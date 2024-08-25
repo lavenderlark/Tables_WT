@@ -3,9 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>2x2 Media Table</title>
+    <style>
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            margin:0;
+            padding: 20px;
+        }
+        table{
+            width:100%;
+            height:100vh;
+            border-collapse:collapse;
+        }
+        td{
+            border:1px solid #ccc;
+            padding: 10px;
+            text-align:center;
+            vertical-align: middle;
+        }
+        video,audio{
+            width:100%;
+            height: auto;
+            max-height: 300px;
+            outline: none;
+        }
+    </style>
 </head>
 <body>
-    
+    <table>
+        <tr>
+            <td>
+                <video controls>
+                    <source src="C:\Users\91730\OneDrive\Desktop\CSE ENGG\IOT\IoT using NodeMCU-Final\IoT using NodeMCU-Final\Videos\Lenovo Tech World - Internet Of Things.mp4" type="video/mp4">
+                    Your Browser does not support the video tag.
+                </video>
+            </td>
+            <td>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/35KDnej1hlI?si=a0ghSrbjQe8P-70V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>   
+            </td>
+        </tr>
+        <tr>
+            <td>
+               <audio controls>
+                <source src="Tables_WT\Tables_WT\deadstare-phonk-199084.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+               </audio> 
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
+ 
