@@ -41,6 +41,7 @@
             background: #000;
             overflow: hidden;
             border-radius: 5px;
+            margin-bottom: 10px;
         }
         .media-container video, 
         .media-container iframe {
@@ -53,7 +54,20 @@
         }
         audio {
             width: 100%;
-            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #3c3c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+        button:hover {
+            background-color: #1f1f1f;
         }
     </style>
 </head>
@@ -63,32 +77,50 @@
         <tr>
             <td>
                 <div class="media-container">
-                    <video controls>
+                    <video id="video1" controls>
                         <source src="C:\Users\91730\OneDrive\Desktop\CSE ENGG\IOT\IoT using NodeMCU-Final\IoT using NodeMCU-Final\Videos\Lenovo Tech World - Internet Of Things.mp4" type="video/mp4">
                         Your Browser does not support the video tag.
                     </video>
                 </div>
+                <button onclick="stopMedia('video1')">Stop Video 1</button>
             </td>
             <td>
                 <div class="media-container">
-                    <iframe src="https://www.youtube.com/embed/35KDnej1hlI?si=a0ghSrbjQe8P-70V" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>   
+                    <iframe id="video2" src="https://www.youtube.com/embed/35KDnej1hlI?si=a0ghSrbjQe8P-70V" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div> 
+                <button onclick="stopIframe('video2')">Stop Video 2</button>  
             </td>
         </tr>
         <tr>
             <td>
-                <audio controls>
+                <audio id="audio1" controls>
                     <source src="OneRepublic - Counting Stars.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio> 
+                <button onclick="stopMedia('audio1')">Stop Audio 1</button>
             </td>
             <td>
-                <audio controls>
+                <audio id="audio2" controls>
                     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio> 
+                <button onclick="stopMedia('audio2')">Stop Audio 2</button>
             </td>
         </tr>
     </table>
+
+    <script>
+        function stopMedia(mediaId) {
+            var media = document.getElementById(mediaId);
+            media.pause();
+            media.currentTime = 0;
+        }
+
+        function stopIframe(iframeId) {
+            var iframe = document.getElementById(iframeId);
+            var iframeSrc = iframe.src;
+            iframe.src = iframeSrc;
+        }
+    </script>
 </body>
 </html>
