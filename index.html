@@ -8,13 +8,26 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color:#b87fb8;
+            padding: 0;
+            background-color: #b87fb8;
+        }
+        header, footer {
+            background-color: #3c3c3c;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
         }
         h1 {
-            text-align: center;
-            color: #1f1f1f;
-            margin-bottom: 20px;
+            margin: 0;
+            font-size: 24px;
+            text-align:center;
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+        main {
+            padding: 20px;
         }
         table {
             width: 100%;
@@ -23,15 +36,19 @@
             background-color: #e5b2e1;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        td {
+        th, td {
             border: 2px solid #3c3c3c;
             padding: 20px;
             text-align: center;
             vertical-align: middle;
             background-color: #eecbe6;
         }
+        th {
+            background-color: #d8a4d4;
+            color: #1f1f1f;
+        }
         td:nth-child(odd) {
-            background-color:#eecbe6;
+            background-color: #eecbe6;
         }
         .media-container {
             position: relative;
@@ -72,42 +89,64 @@
     </style>
 </head>
 <body>
-    <h1>2x2 Media Table</h1>
-    <table>
-        <tr>
-            <td>
-                <div class="media-container">
-                    <video id="video1" controls>
-                        <source src="C:\Users\91730\OneDrive\Desktop\CSE ENGG\IOT\IoT using NodeMCU-Final\IoT using NodeMCU-Final\Videos\Lenovo Tech World - Internet Of Things.mp4" type="video/mp4">
-                        Your Browser does not support the video tag.
-                    </video>
-                </div>
-                <button onclick="stopMedia('video1')">Stop Video 1</button>
-            </td>
-            <td>
-                <div class="media-container">
-                    <iframe id="video2" src="https://www.youtube.com/embed/35KDnej1hlI?si=a0ghSrbjQe8P-70V" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div> 
-                <button onclick="stopIframe('video2')">Stop Video 2</button>  
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <audio id="audio1" controls>
-                    <source src="giC:\HTML\OneRepublic - Counting Stars.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio> 
-                <button onclick="stopMedia('audio1')">Stop Audio 1</button>
-            </td>
-            <td>
-                <audio id="audio2" controls>
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio> 
-                <button onclick="stopMedia('audio2')">Stop Audio 2</button>
-            </td>
-        </tr>
-    </table>
+    <header>
+        <h1>Welcome to My Media Page</h1>
+    </header>
+
+    <main>
+        <h1>2x2 Media Table</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Video 1</th>
+                    <th>Video 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="media-container">
+                            <video id="video1" controls>
+                                <source src="C:\Users\91730\OneDrive\Desktop\CSE ENGG\IOT\IoT using NodeMCU-Final\IoT using NodeMCU-Final\Videos\Lenovo Tech World - Internet Of Things.mp4" type="video/mp4">
+                                Your Browser does not support the video tag.
+                            </video>
+                        </div>
+                        <button onclick="stopMedia('video1')">Stop Video 1</button>
+                    </td>
+                    <td>
+                        <div class="media-container">
+                            <iframe id="video2" src="https://www.youtube.com/embed/35KDnej1hlI?si=a0ghSrbjQe8P-70V" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div> 
+                        <button onclick="stopIframe('video2')">Stop Video 2</button>  
+                    </td>
+                </tr>
+                <tr>
+                    <th>Audio 1</th>
+                    <th>Audio 2</th>
+                </tr>
+                <tr>
+                    <td>
+                        <audio id="audio1" controls>
+                            <source src="giC:\HTML\OneRepublic - Counting Stars.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio> 
+                        <button onclick="stopMedia('audio1')">Stop Audio 1</button>
+                    </td>
+                    <td>
+                        <audio id="audio2" controls>
+                            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio> 
+                        <button onclick="stopMedia('audio2')">Stop Audio 2</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Beulah Miraclin. All Rights Reserved.</p>
+    </footer>
 
     <script>
         function stopMedia(mediaId) {
